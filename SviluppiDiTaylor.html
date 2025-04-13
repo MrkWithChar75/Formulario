@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Taylor</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      background-color: rgba(0, 0, 0, 0.921);
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      /*margin: 2em auto;*/
+      line-height: 1.6;
+      color: #ffffff;
+    }
+    p{
+        text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    th, td {
+      border: 1px solid #787878;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #686868;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Formulario: Sviluppi di Taylor</h1>
+
+<h2>Sviluppo di Taylor intorno a \( x = a \):</h2>
+<p>
+  \( f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)^n \)
+</p>
+
+<h2>Maclaurin (caso particolare con \( a = 0 \)):</h2>
+<p>
+  \( f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n \)
+</p>
+
+<h2>Sviluppi notevoli:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Funzione</th>
+      <th>Sviluppo (intorno a 0)</th>
+      <th>Raggio di convergenza</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\( e^x \)</td>
+      <td>\( \sum_{n=0}^{\infty} \frac{x^n}{n!} \)</td>
+      <td>\( \infty \)</td>
+    </tr>
+    <tr>
+      <td>\( \sin x \)</td>
+      <td>\( \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \)</td>
+      <td>\( \infty \)</td>
+    </tr>
+    <tr>
+      <td>\( \cos x \)</td>
+      <td>\( \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} \)</td>
+      <td>\( \infty \)</td>
+    </tr>
+    <tr>
+      <td>\( \ln(1 + x) \)</td>
+      <td>\( \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n} \)</td>
+      <td>\( |x| < 1 \)</td>
+    </tr>
+    <tr>
+      <td>\( \frac{1}{1 - x} \)</td>
+      <td>\( \sum_{n=0}^{\infty} x^n \)</td>
+      <td>\( |x| < 1 \)</td>
+    </tr>
+    <tr>
+      <td>\( (1 + x)^k \)</td>
+      <td>\( \sum_{n=0}^{\infty} \binom{k}{n} x^n \)</td>
+      <td>\( |x| < 1 \)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Resto di Lagrange:</h2>
+<p>
+  \( R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - a)^{n+1}, \quad \text{con } \xi \in (a, x) \)
+</p>
+
+</body>
+</html>
