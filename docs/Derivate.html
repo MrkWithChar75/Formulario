@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Derivate Notevoli</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 40px;
+        line-height: 1.6;
+        background-color: rgba(0, 0, 0, 0.921);
+        color: #ffffff;
+    }
+    h1, h2 {
+    color: #b35f00;
+    }
+    p{
+        text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    th, td {
+      border: 1px solid #787878;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #424242;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Formulario delle Derivate Notevoli</h1>
+
+  <h2>1. Funzioni elementari</h2>
+  <ul>
+    <li>\( \frac{d}{dx} c = 0 \)</li>
+    <li>\( \frac{d}{dx} x = 1 \)</li>
+    <li>\( \frac{d}{dx} x^n = nx^{n-1} \)</li>
+    <li>\( \frac{d}{dx} \sqrt{x} = \frac{1}{2\sqrt{x}} \)</li>
+    <li>\( \frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2} \)</li>
+  </ul>
+
+  <h2>2. Funzioni esponenziali e logaritmiche</h2>
+  <ul>
+    <li>\( \frac{d}{dx} e^x = e^x \)</li>
+    <li>\( \frac{d}{dx} a^x = a^x \ln a \)</li>
+    <li>\( \frac{d}{dx} \ln x = \frac{1}{x} \)</li>
+    <li>\( \frac{d}{dx} \log_a x = \frac{1}{x \ln a} \)</li>
+  </ul>
+
+  <h2>3. Funzioni trigonometriche</h2>
+  <ul>
+    <li>\( \frac{d}{dx} \sin x = \cos x \)</li>
+    <li>\( \frac{d}{dx} \cos x = -\sin x \)</li>
+    <li>\( \frac{d}{dx} \tan x = \frac{1}{\cos^2 x} \)</li>
+    <li>\( \frac{d}{dx} \cot x = -\frac{1}{\sin^2 x} \)</li>
+    <li>\( \frac{d}{dx} \sec x = \sec x \tan x \)</li>
+    <li>\( \frac{d}{dx} \csc x = -\csc x \cot x \)</li>
+  </ul>
+
+  <h2>4. Funzioni trigonometriche inverse</h2>
+  <ul>
+    <li>\( \frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1 - x^2}} \)</li>
+    <li>\( \frac{d}{dx} \arccos x = -\frac{1}{\sqrt{1 - x^2}} \)</li>
+    <li>\( \frac{d}{dx} \arctan x = \frac{1}{1 + x^2} \)</li>
+    <li>\( \frac{d}{dx} \arccot x = -\frac{1}{1 + x^2} \)</li>
+    <li>\( \frac{d}{dx} \arcsec x = \frac{1}{|x| \sqrt{x^2 - 1}} \)</li>
+    <li>\( \frac{d}{dx} \arccsc x = -\frac{1}{|x| \sqrt{x^2 - 1}} \)</li>
+  </ul>
+
+  <h2>5. Regole di derivazione</h2>
+  <ul>
+    <li>\( \frac{d}{dx}(f + g) = f' + g' \)</li>
+    <li>\( \frac{d}{dx}(fg) = f'g + fg' \)</li>
+    <li>\( \frac{d}{dx} \left( \frac{f}{g} \right) = \frac{f'g - fg'}{g^2} \)</li>
+    <li>\( \frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x) \)</li>
+  </ul>
+
+</body>
+</html>
