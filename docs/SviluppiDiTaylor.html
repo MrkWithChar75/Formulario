@@ -2,52 +2,24 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario Taylor</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
-  <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 40px;
-        line-height: 1.6;
-        background-color: rgba(0, 0, 0, 0.921);
-        color: #ffffff;
-    }
-    h1, h2 {
-    color: #b35f00;
-    }
-    p{
-        text-align: center;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-    th, td {
-      border: 1px solid #787878;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background: #424242;
-    }
-  </style>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>Formulario: Sviluppi di Taylor</h1>
 
 <h2>Sviluppo di Taylor intorno a \( x = a \):</h2>
-<p>
+<p class="centered">
   \( f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x - a)^n \)
 </p>
 
 <h2>Maclaurin (caso particolare con \( a = 0 \)):</h2>
-<p>
+<p class="centered">
   \( f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n \)
 </p>
 
@@ -95,7 +67,7 @@
 </table>
 
 <h2>Resto di Lagrange:</h2>
-<p>
+<p class="centered">
   \( R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - a)^{n+1}, \quad \text{con } \xi \in (a, x) \)
 </p>
 
