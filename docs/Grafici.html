@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Grafici Funzioni - JavaScript + Plotly</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    .grafico {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grafici di Funzioni Note</h1>
+
+  <div id="quadratica" class="grafico"></div>
+  <div id="seno" class="grafico"></div>
+  <div id="coseno" class="grafico"></div>
+  <div id="tangente" class="grafico"></div>
+  <div id="esponenziale" class="grafico"></div>
+  <div id="logaritmo" class="grafico"></div>
+
+  <script>
+    function generaGrafico(id, funzione, intervallo, titolo, nomeFunzione) {
+      let x = [];
+      let y = [];
+      for (let i = intervallo.min; i <= intervallo.max; i += 0.05) {
+        x.push(i);
+        let valore = funzione(i);
+        y.push(isFinite(valore) ? valore : null); // evita NaN o Infinity
+      }
+
+      let trace = {
+        x: x,
+        y: y,
+        mode: 'lines',
+        name: nomeFunzione
+      };
+
+      let layout = {
+        title: titolo,
+        xaxis: { title: 'x' },
+        yaxis: { title: 'f(x)' },
+      };
+
+      Plotly.newPlot(id, [trace], layout);
+    }
+
+    // Genera tutti i grafici
+    generaGrafico("quadratica", x => x * x, {min: -10, max: 10}, "f(x) = x²", "x²");
+    generaGrafico("seno", Math.sin, {min: -2 * Math.PI, max: 2 * Math.PI}, "f(x) = sin(x)", "sin(x)");
+    generaGrafico("coseno", Math.cos, {min: -2 * Math.PI, max: 2 * Math.PI}, "f(x) = cos(x)", "cos(x)");
+    generaGrafico("tangente", Math.tan, {min: -Math.PI, max: Math.PI}, "f(x) = tan(x)", "tan(x)");
+    generaGrafico("esponenziale", Math.exp, {min: -2, max: 2}, "f(x) = e^x", "e^x");
+    generaGrafico("logaritmo", Math.log, {min: 0.1, max: 10}, "f(x) = ln(x)", "ln(x)");
+  </script>
+</body>
+</html>
