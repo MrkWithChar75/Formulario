@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Numeri Complessi</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Formulario Numeri Complessi</h2>
+
+  <h3>1. Forma cartesiana</h3>
+  <p>\( z = a + bi \)</p>
+  <ul>
+    <li>\( a = \text{parte reale} \)</li>
+    <li>\( b = \text{parte immaginaria} \)</li>
+  </ul>
+
+  <h3>2. Forma polare</h3>
+  <p>\( z = r(\cos\theta + i\sin\theta) \)</p>
+  <ul>
+    <li>\( r = |z| = \sqrt{a^2 + b^2} \)</li>
+    <li>\( \theta = \arg(z) = \tan^{-1}\left(\frac{b}{a}\right) \)</li>
+  </ul>
+
+  <h3>3. Forma esponenziale (Eulero)</h3>
+  <p>\( z = re^{i\theta} \)</p>
+
+  <h3>4. Conversioni</h3>
+  <ul>
+    <li>Da cartesiana a polare:
+      <br> \( r = \sqrt{a^2 + b^2},\quad \theta = \tan^{-1}\left(\frac{b}{a}\right) \)
+    </li>
+    <li>Da polare a cartesiana:
+      <br> \( a = r\cos\theta,\quad b = r\sin\theta \)
+    </li>
+    <li>Da polare a esponenziale:
+      <br> \( z = re^{i\theta} \)
+    </li>
+    <li>Da esponenziale a cartesiana:
+      <br> \( z = r(\cos\theta + i\sin\theta) \)
+    </li>
+  </ul>
+
+</body>
+</html>
