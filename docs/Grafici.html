@@ -1,62 +1,183 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Grafici Funzioni - JavaScript + Plotly</title>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grafici di Funzioni Elementari</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
   <style>
     body {
       font-family: sans-serif;
-      margin: 20px;
+      margin: 40px;
+      background: #f9f9f9;
     }
-    .grafico {
-      margin-bottom: 50px;
+    .function {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .graph {
+      text-align: center;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <h1>Grafici di Funzioni Note</h1>
 
-  <div id="quadratica" class="grafico"></div>
-  <div id="seno" class="grafico"></div>
-  <div id="coseno" class="grafico"></div>
-  <div id="tangente" class="grafico"></div>
-  <div id="esponenziale" class="grafico"></div>
-  <div id="logaritmo" class="grafico"></div>
+  <h1>Grafici di Funzioni Elementari</h1>
 
-  <script>
-    function generaGrafico(id, funzione, intervallo, titolo, nomeFunzione) {
-      let x = [];
-      let y = [];
-      for (let i = intervallo.min; i <= intervallo.max; i += 0.05) {
-        x.push(i);
-        let valore = funzione(i);
-        y.push(isFinite(valore) ? valore : null); // evita NaN o Infinity
-      }
+  <div class="function">
+    <h2>Funzione costante</h2>
+    <p>\[ f(x) = c \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( \{c\} \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/costante.jpg" alt="Grafico funzione costante">
+    </div>
+  </div>
 
-      let trace = {
-        x: x,
-        y: y,
-        mode: 'lines',
-        name: nomeFunzione
-      };
+  <div class="function">
+    <h2>Retta obliqua (a &gt; 0)</h2>
+    <p>\[ f(x) = ax + b \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( \mathbb{R} \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/retta_pos.jpg" alt="Retta con coefficiente positivo">
+    </div>
+  </div>
 
-      let layout = {
-        title: titolo,
-        xaxis: { title: 'x' },
-        yaxis: { title: 'f(x)' },
-      };
+  <div class="function">
+    <h2>Retta obliqua (a &lt; 0)</h2>
+    <p>\[ f(x) = ax + b \]</p>
+    <div class="graph">
+      <img src="grafici_funzioni/retta_neg.jpg" alt="Retta con coefficiente negativo">
+    </div>
+  </div>
 
-      Plotly.newPlot(id, [trace], layout);
-    }
+  <div class="function">
+    <h2>Funzione reciproca</h2>
+    <p>\[ f(x) = \frac{1}{x} \]</p>
+    <p>Dominio: \( \mathbb{R} \setminus \{0\} \), Immagine: \( \mathbb{R} \setminus \{0\} \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/reciproca.jpg" alt="Grafico 1/x">
+    </div>
+  </div>
 
-    // Genera tutti i grafici
-    generaGrafico("quadratica", x => x * x, {min: -10, max: 10}, "f(x) = x²", "x²");
-    generaGrafico("seno", Math.sin, {min: -2 * Math.PI, max: 2 * Math.PI}, "f(x) = sin(x)", "sin(x)");
-    generaGrafico("coseno", Math.cos, {min: -2 * Math.PI, max: 2 * Math.PI}, "f(x) = cos(x)", "cos(x)");
-    generaGrafico("tangente", Math.tan, {min: -Math.PI, max: Math.PI}, "f(x) = tan(x)", "tan(x)");
-    generaGrafico("esponenziale", Math.exp, {min: -2, max: 2}, "f(x) = e^x", "e^x");
-    generaGrafico("logaritmo", Math.log, {min: 0.1, max: 10}, "f(x) = ln(x)", "ln(x)");
-  </script>
+  <div class="function">
+    <h2>Funzione quadratica</h2>
+    <p>\[ f(x) = x^2 \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( [0, +\infty) \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/quadratica.jpg" alt="Grafico x^2">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Radice quadrata</h2>
+    <p>\[ f(x) = \sqrt{x} \]</p>
+    <div class="graph">
+      <img src="grafici_funzioni/sqrt.jpg" alt="Grafico sqrt(x)">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione cubica</h2>
+    <p>\[ f(x) = x^3 \]</p>
+    <div class="graph">
+      <img src="grafici_funzioni/cubica.jpg" alt="Grafico x^3">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Radice cubica</h2>
+    <p>\[ f(x) = \sqrt[3]{x} \]</p>
+    <div class="graph">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Cubic_root_function.svg" alt="Grafico radice cubica">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzioni potenza pari e dispari</h2>
+    <p>\[ f(x) = x^n \]</p>
+    <p>Per \( n \) pari: \( \text{Im}(f) = [0, +\infty) \)<br>Per \( n \) dispari: \( \text{Im}(f) = \mathbb{R} \)</p>
+  </div>
+
+  <div class="function">
+    <h2>Potenza con esponente reale</h2>
+    <p>\[ f(x) = x^\alpha \]</p>
+    <p>\( \alpha > 0 \): dominio \( [0, +\infty) \), immagine \( [0, +\infty) \)<br>
+       \( \alpha < 0 \): dominio \( (0, +\infty) \), immagine \( (0, +\infty) \)</p>
+  </div>
+
+  <div class="function">
+    <h2>Funzione esponenziale</h2>
+    <p>\[ f(x) = e^x \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( (0, +\infty) \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/esponenziale.jpg" alt="Grafico esponenziale">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione logaritmica</h2>
+    <p>\[ f(x) = \log_e x = \ln x \]</p>
+    <p>Dominio: \( (0, +\infty) \), Immagine: \( \mathbb{R} \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/logaritmica.jpg" alt="Grafico log(x)">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione seno</h2>
+    <p>\[ f(x) = \sin x \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( [-1, 1] \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/seno.jpg" alt="Grafico sin(x)">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione coseno</h2>
+    <p>\[ f(x) = \cos x \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( [-1, 1] \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/coseno.jpg" alt="Grafico cos(x)">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione tangente</h2>
+    <p>\[ f(x) = \tan x \]</p>
+    <p>Dominio: \( \mathbb{R} \setminus \{\frac{\pi}{2} + k\pi, k \in \mathbb{Z} \} \), Immagine: \( \mathbb{R} \)</p>
+    <div class="graph">
+      <img src="grafici_funzioni/tangente.jpg" alt="Grafico tan(x)">
+    </div>
+  </div>
+
+  <div class="function">
+    <h2>Funzione arcseno</h2>
+    <p>\[ f(x) = \arcsin x \]</p>
+    <p>Dominio: \( [-1, 1] \), Immagine: \( \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \)</p>
+  </div>
+
+  <div class="function">
+    <h2>Funzione arccoseno</h2>
+    <p>\[ f(x) = \arccos x \]</p>
+    <p>Dominio: \( [-1, 1] \), Immagine: \( [0, \pi] \)</p>
+  </div>
+
+  <div class="function">
+    <h2>Funzione arctangente</h2>
+    <p>\[ f(x) = \arctan x \]</p>
+    <p>Dominio: \( \mathbb{R} \), Immagine: \( \left( -\frac{\pi}{2}, \frac{\pi}{2} \right) \)</p>
+  </div>
+
 </body>
 </html>
