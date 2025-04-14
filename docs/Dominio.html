@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Dominio di Funzione</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <h1>Formulario: Dominio di una Funzione</h1>
+
+  <h2>Funzioni sempre definite</h2>
+  <ul>
+    <li>Polinomi: \( f(x) = x^2 + 3x + 5 \) &rarr; Dominio: \( \mathbb{R} \)</li>
+    <li>Esponenziali: \( f(x) = a^x \) con \( a > 0 \) &rarr; Dominio: \( \mathbb{R} \)</li>
+    <li>Trigonometriche base: \( \sin(x), \cos(x) \) &rarr; Dominio: \( \mathbb{R} \)</li>
+  </ul>
+
+  <h2>Limitazioni comuni</h2>
+
+  <h3>1. Radici pari</h3>
+  <p>
+    Richiedono che il radicando sia maggiore o uguale a zero:<br>
+    \( f(x) = \sqrt{x - 2} \Rightarrow x - 2 \geq 0 \Rightarrow x \geq 2 \)
+  </p>
+
+  <h3>2. Denominatori</h3>
+  <p>
+    Il denominatore non può essere zero:<br>
+    \( f(x) = \frac{1}{x - 3} \Rightarrow x - 3 \neq 0 \Rightarrow x \neq 3 \)
+  </p>
+
+  <h3>3. Logaritmi</h3>
+  <p>
+    L'argomento deve essere maggiore di zero:<br>
+    \( f(x) = \log(x^2 - 4) \Rightarrow x^2 - 4 > 0 \Rightarrow x < -2 \quad \text{o} \quad x > 2 \)
+  </p>
+
+  <h3>4. Funzioni trigonometriche con restrizioni</h3>
+  <ul>
+    <li>\( \tan(x) \): non definita per \( x = \frac{\pi}{2} + k\pi \)</li>
+    <li>\( \cot(x) \): non definita per \( x = k\pi \)</li>
+    <li>\( \sec(x) \): non definita per \( x = \frac{\pi}{2} + k\pi \)</li>
+    <li>\( \csc(x) \): non definita per \( x = k\pi \)</li>
+  </ul>
+
+  <h2>Metodo pratico</h2>
+  <ol>
+    <li>Analizza la funzione: cerca radici, logaritmi, denominatori, funzioni trigonometriche.</li>
+    <li>Scrivi le condizioni di esistenza.</li>
+    <li>Risolvi le disequazioni.</li>
+    <li>Trova l'intervallo (o unione) dei valori ammessi: questo è il dominio.</li>
+  </ol>
+
+</body>
+</html>
